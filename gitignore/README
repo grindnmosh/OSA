@@ -1,0 +1,13 @@
+///////////////////////////////////
+// Using Android.gitignore
+///////////////////////////////////
+
+If you’re not using GitHub, you can still add your own .gitignore file to your repo.  To do this for your Android project, follow the steps below:
+
+1. Copy the attached “Android.gitignore” file into the root of your repository.
+
+2. Rename “Android.gitignore” to “.gitignore”. OS X will warn you about making the file hidden, just accept it.
+
+3. Commit the .gitignore file to your repo.
+
+Congrats! All extra generated files will now be ignored.
