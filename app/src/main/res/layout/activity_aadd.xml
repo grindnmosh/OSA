@@ -122,21 +122,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Email:"
-        android:id="@+id/textView7"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/editText5"
-        android:layout_alignLeft="@+id/editText9" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Chat Service:"
-        android:id="@+id/textView8"
-        android:layout_alignTop="@+id/editText8"
+        android:id="@+id/textView7"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/editText8" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -144,9 +134,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Chat Handle:"
         android:id="@+id/textView9"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView8"
-        android:layout_alignEnd="@+id/textView8" />
+        android:layout_alignParentBottom="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -156,9 +144,9 @@
         android:id="@+id/editText5"
         android:layout_toEndOf="@+id/textView5"
         android:layout_below="@+id/editText6"
-        android:layout_alignLeft="@+id/editText9"
-        android:layout_alignStart="@+id/editText9"
-        android:layout_marginTop="23dp" />
+        android:layout_toRightOf="@+id/textView5"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -167,30 +155,24 @@
         android:text="Name"
         android:ems="10"
         android:id="@+id/editText6"
-        android:layout_toEndOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView7"
         android:layout_alignTop="@+id/textView6"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/textView7" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText7"
-        android:layout_toEndOf="@+id/textView3"
-        android:layout_above="@+id/editText6"
-        android:layout_alignRight="@+id/editText6"
-        android:layout_alignEnd="@+id/editText6"
-        android:layout_toRightOf="@+id/textView3" />
+
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText8"
-        android:layout_toEndOf="@+id/textView8"
         android:layout_above="@+id/textView9"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="23dp" />
+        android:layout_marginBottom="23dp"
+        android:layout_toRightOf="@+id/textView9"
+        android:layout_toEndOf="@+id/textView9" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -201,4 +183,24 @@
         android:layout_toRightOf="@+id/textView5"
         android:layout_alignRight="@+id/editText8"
         android:layout_alignEnd="@+id/editText8" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Email:"
+        android:id="@+id/textView8"
+        android:layout_alignBottom="@+id/editText5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText7"
+        android:layout_above="@+id/textView6"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/editText6"
+        android:layout_alignStart="@+id/editText6" />
 </RelativeLayout>
