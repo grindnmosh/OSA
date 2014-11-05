@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AssignActivity"
+            android:label="@string/title_activity_assign" >
+        </activity>
+        <activity
+            android:name=".ADetailActivity"
+            android:label="@string/title_activity_adetail" >
+        </activity>
+        <activity
+            android:name=".AAddActivity"
+            android:label="@string/title_activity_aadd" >
+        </activity>
     </application>
 
 </manifest>
