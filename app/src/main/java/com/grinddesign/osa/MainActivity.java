@@ -1,6 +1,7 @@
 package com.grinddesign.osa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,8 +29,9 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_new) {
+            Intent addNew = new Intent(this, AAddActivity.class);
+            this.startActivity(addNew);
         }
         return super.onOptionsItemSelected(item);
     }

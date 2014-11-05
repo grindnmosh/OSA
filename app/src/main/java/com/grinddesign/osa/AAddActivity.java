@@ -76,7 +76,7 @@ public class AAddActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_save) {
-
+            Log.i("step", "0");
             try {
                 Log.i("step", "1");
                 FileInputStream fis = openFileInput("ass.dat");
