@@ -7,5 +7,11 @@
     <string name="title_activity_assign">AssignActivity</string>
     <string name="title_activity_adetail">ADetailActivity</string>
     <string name="title_activity_aadd">AAddActivity</string>
+    <string-array name="loads">
+        <item >Assignments</item>
+        <item >Time Management</item>
+        <item >Profile</item>
+        <item >Extras</item>
+    </string-array>
 
 </resources>
