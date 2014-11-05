@@ -18,15 +18,27 @@
         </activity>
         <activity
             android:name=".AssignActivity"
-            android:label="@string/title_activity_assign" >
+            android:label="@string/title_activity_assign"
+            android:parentActivityName="com.grinddesign.osa.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.grinddesign.osa.MainActivity" />
         </activity>
         <activity
             android:name=".ADetailActivity"
-            android:label="@string/title_activity_adetail" >
+            android:label="@string/title_activity_adetail"
+            android:parentActivityName="com.grinddesign.osa.AssignActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.grinddesign.osa.AssignActivity" />
         </activity>
         <activity
             android:name=".AAddActivity"
-            android:label="@string/title_activity_aadd" >
+            android:label="@string/title_activity_aadd"
+            android:parentActivityName="com.grinddesign.osa.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.grinddesign.osa.MainActivity" />
         </activity>
     </application>
 

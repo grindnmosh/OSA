@@ -47,6 +47,7 @@ public class AAddActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aadd);
 
+
         assName = (TextView) findViewById(R.id.assIn);
         className = (TextView) findViewById(R.id.assClass);
         dueDate = (TextView) findViewById(R.id.assDue);
