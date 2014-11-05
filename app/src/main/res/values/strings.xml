@@ -3,7 +3,7 @@
 
     <string name="app_name">OSA</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Add</string>
     <string name="title_activity_assign">AssignActivity</string>
     <string name="title_activity_adetail">ADetailActivity</string>
     <string name="title_activity_aadd">AAddActivity</string>
