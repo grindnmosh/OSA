@@ -27,10 +27,10 @@
         <activity
             android:name=".ADetailActivity"
             android:label="@string/title_activity_adetail"
-            android:parentActivityName="com.grinddesign.osa.AssignActivity">
+            android:parentActivityName="com.grinddesign.osa.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.grinddesign.osa.AssignActivity" />
+                android:value="com.grinddesign.osa.MainActivity" />
         </activity>
         <activity
             android:name=".AAddActivity"

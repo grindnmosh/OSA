@@ -92,7 +92,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Log.i("check click", "Click Click Boom");
         Intent assPass = new Intent(this, AssignActivity.class);
-        String assignment = classObj.get(position);
+        String assignment = classes.get(position);
         Log.i("check click", assignment);
         assPass.putExtra("item", assignment);
         startActivity(assPass);
