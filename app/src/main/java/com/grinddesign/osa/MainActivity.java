@@ -59,8 +59,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             e.printStackTrace();
         }
 
-        for (i = 0; i < assData.size(); i++) {
-            if (assData != null) {
+        if (assData != null) {
+            for (i = 0; i < assData.size(); i++) {
                 classy = "";
                 AssignObject data = assData.get(i);
                 classy = data.getCl();
@@ -71,6 +71,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                     Log.i("read", String.valueOf(classy));
                     if (classy.equals(className)) {
                         classObj.add(subData.toString());
+                        Log.i("Class Object", subData.toString());
                         if (!classes.contains(classy)) {
                             classes.add(classy);
                         }

@@ -1,17 +1,30 @@
 package com.grinddesign.osa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 
 public class AssignActivity extends Activity {
+
+    String assignmentsPass;
+    ArrayList<AssignObject> assData;
+    ArrayList<String> assignments = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_assign);
+
+        Intent intent = getIntent();
+        assignmentsPass = intent.getStringExtra("item");
+        assignments.add(assignmentsPass);
+        Log.i("arrayList", assignments.toString());
 
     }
 
