@@ -114,8 +114,9 @@ public class AssignActivity extends Activity implements AdapterView.OnItemClickL
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_new) {
+            Intent addNew = new Intent(this, AAddActivity.class);
+            this.startActivity(addNew);
         }
         return super.onOptionsItemSelected(item);
     }

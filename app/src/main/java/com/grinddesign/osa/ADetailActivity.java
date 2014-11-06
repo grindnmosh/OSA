@@ -1,37 +1,51 @@
 package com.grinddesign.osa;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class ADetailActivity extends Activity {
+
+    TextView ass;
+    TextView cla;
+    TextView due;
+    TextView det;
+    TextView link;
+    TextView ins;
+    TextView em;
+    TextView ser;
+    TextView han;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adetail);
+        ass = (TextView) findViewById(R.id.assD);
+        cla = (TextView) findViewById(R.id.classD);
+        due = (TextView) findViewById(R.id.dueD);
+        det = (TextView) findViewById(R.id.detD);
+        link = (TextView) findViewById(R.id.linkD);
+        ins = (TextView) findViewById(R.id.insD);
+        em = (TextView) findViewById(R.id.emD);
+        ser = (TextView) findViewById(R.id.serD);
+        han = (TextView) findViewById(R.id.hanD);
 
+        Intent i = getIntent();
+        ass.setText(i.getStringExtra("item"));
+        cla.setText(i.getStringExtra("class"));
+        due.setText(i.getStringExtra("due"));
+        det.setText(i.getStringExtra("detail"));
+        link.setText(i.getStringExtra("link"));
+        ins.setText(i.getStringExtra("instruct"));
+        em.setText(i.getStringExtra("email"));
+        ser.setText(i.getStringExtra("service"));
+        han.setText(i.getStringExtra("handle"));
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.adetail, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }
