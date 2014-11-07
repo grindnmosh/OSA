@@ -1,6 +1,8 @@
 package com.grinddesign.osa;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -18,13 +21,15 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 
-public class MainActivity extends Activity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener, DialogInterface.OnClickListener {
 
+    Button newButt;
     ArrayList<AssignObject> assData;
     int i;
     int c;
     String classy;
     String[] loads;
+    Context con;
     static ArrayAdapter<String> cellAdapter;
     ArrayList<String> classes = new ArrayList<String>();
     ArrayList<String> classObj = new ArrayList<String>();
@@ -36,6 +41,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
         Spinner s = (Spinner) findViewById(R.id.spinner);
         ListView lv = (ListView) findViewById(R.id.listView);
+        newButt = (Button) findViewById(R.id.newButt);
+        newButt.setOnClickListener(myhandle);
+
 
         try {
             Log.i("step", "1");
@@ -60,6 +68,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         }
 
         if (assData != null) {
+            newButt.setVisibility(View.INVISIBLE);
+
             for (i = 0; i < assData.size(); i++) {
                 classy = "";
                 AssignObject data = assData.get(i);
@@ -79,6 +89,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                 }
             }
         }
+        else
+        {
+            newButt.setVisibility(View.VISIBLE);
+
+        }
         loads = getResources().getStringArray(R.array.loads);
         ArrayAdapter<String> loadsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, loads);
         s.setAdapter(loadsAdapter);
@@ -86,8 +101,16 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         cellAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classes);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);
+
         lv.setAdapter(cellAdapter);
     }
+
+    View.OnClickListener myhandle = new View.OnClickListener() {
+        public void onClick(View v) {
+            Intent adder = new Intent(MainActivity.this, AAddActivity.class);
+            startActivity(adder);
+        }
+    };
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -153,5 +176,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(DialogInterface dialogInterface, int i) {
+        Intent addNew = new Intent(this, AAddActivity.class);
+        this.startActivity(addNew);
     }
 }
