@@ -8,8 +8,10 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.grinddesign.osa.SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,9 +19,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+
+        </activity>
+        <activity
             android:name=".AssignActivity"
             android:label="@string/title_activity_assign"
-            android:parentActivityName="com.grinddesign.osa.MainActivity">
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.grinddesign.osa.MainActivity" />
@@ -27,7 +34,7 @@
         <activity
             android:name=".ADetailActivity"
             android:label="@string/title_activity_adetail"
-            android:parentActivityName="com.grinddesign.osa.MainActivity">
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.grinddesign.osa.MainActivity" />
@@ -35,11 +42,12 @@
         <activity
             android:name=".AAddActivity"
             android:label="@string/title_activity_aadd"
-            android:parentActivityName="com.grinddesign.osa.MainActivity">
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.grinddesign.osa.MainActivity" />
         </activity>
+
     </application>
 
 </manifest>
