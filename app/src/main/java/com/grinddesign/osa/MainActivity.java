@@ -18,7 +18,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 
-public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
     ArrayList<AssignObject> assData;
     int i;
@@ -85,6 +85,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
         cellAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classes);
         lv.setOnItemClickListener(this);
+        lv.setOnItemLongClickListener(this);
         lv.setAdapter(cellAdapter);
     }
 
@@ -97,6 +98,39 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         assPass.putExtra("item", assignment);
         startActivity(assPass);
 
+
+    }
+
+    public void removeItem(int position){
+        Log.i("check kill", "Click Click Boom");
+        for (i = 0; i < assData.size(); i++) {
+            AssignObject data = assData.get(position);
+            classy = data.getCl();
+            Log.i("check class", String.valueOf(classy));
+            for (c = 0; c < assData.size(); c++) {
+                AssignObject subData = assData.get(c);
+                String className = subData.getCl();
+                Log.i("read", String.valueOf(classy));
+                if (classy.equals(className)) {
+                    classObj.add(subData.toString());
+                    if (!classes.contains(classy)) {
+                        assData.remove(subData);
+                    }
+                }
+            }
+        }
+
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View strings,
+                                   int position, long id) {
+        // TODO Auto-generated method stub
+        int trigger = position;
+        removeItem(trigger);
+        classes.remove(trigger);
+        cellAdapter.notifyDataSetChanged();
+        return false;
 
     }
 
@@ -117,6 +151,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             Intent addNew = new Intent(this, AAddActivity.class);
             this.startActivity(addNew);
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
