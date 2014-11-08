@@ -16,8 +16,10 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
@@ -29,10 +31,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     int c;
     String classy;
     String[] loads;
-    Context con;
+    ListView lv;
     static ArrayAdapter<String> cellAdapter;
     ArrayList<String> classes = new ArrayList<String>();
     ArrayList<String> classObj = new ArrayList<String>();
+    ArrayList<AssignObject> crazyGlue = new ArrayList<AssignObject>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         setContentView(R.layout.activity_main);
 
         Spinner s = (Spinner) findViewById(R.id.spinner);
-        ListView lv = (ListView) findViewById(R.id.listView);
+        lv = (ListView) findViewById(R.id.listView);
         newButt = (Button) findViewById(R.id.newButt);
         newButt.setOnClickListener(myhandle);
 
@@ -124,34 +127,77 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
     }
 
-    public void removeItem(int position){
-        Log.i("check kill", "Click Click Boom");
-        for (i = 0; i < assData.size(); i++) {
-            AssignObject data = assData.get(position);
-            classy = data.getCl();
-            Log.i("check class", String.valueOf(classy));
-            for (c = 0; c < assData.size(); c++) {
-                AssignObject subData = assData.get(c);
-                String className = subData.getCl();
-                Log.i("read", String.valueOf(classy));
-                if (classy.equals(className)) {
-                    classObj.add(subData.toString());
-                    if (!classes.contains(classy)) {
-                        assData.remove(subData);
-                    }
-                }
-            }
-        }
 
-    }
 
     @Override
     public boolean onItemLongClick(AdapterView<?> parent, View strings,
                                    int position, long id) {
-        // TODO Auto-generated method stub
-        int trigger = position;
-        removeItem(trigger);
-        classes.remove(trigger);
+
+        try {
+            Log.i("step", "1");
+            FileInputStream fis = openFileInput("ass.dat");
+            Log.i("step", "2");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            Log.i("read", "trying to read saved file");
+            if (assData == null) {
+                assData = new ArrayList<AssignObject>();
+                Log.i("TEST", "TEST");
+            }
+            assData = (ArrayList<AssignObject>) ois.readObject();
+            Log.i("read", String.valueOf(assData));
+            crazyGlue.addAll(assData);
+
+            ois.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        Log.i("check kill", "Click Click Boom");
+        for (i = 0; i < crazyGlue.size(); i++) {
+            AssignObject data = crazyGlue.get(position);
+            classy = data.getCl();
+            Log.i("check class", String.valueOf(classy));
+            for (c = 0; c < crazyGlue.size(); c++) {
+                AssignObject subData = crazyGlue.get(c);
+                String className = subData.getCl();
+                Log.i("read", String.valueOf(classy));
+                if (classy.equals(className)) {
+                    crazyGlue.remove(subData);
+                }
+            }
+        }
+
+        try {
+            Log.i("jObj2", "am I here");
+            FileOutputStream fos = openFileOutput("ass.dat", Context.MODE_PRIVATE);
+
+            // Wrapping our file stream.
+            Log.i("jObj2", "am I here2");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            // Writing the serializable object to the file
+            Log.i("jObj2", "am I here3");
+            assData = new ArrayList<AssignObject>();
+
+                assData.addAll(crazyGlue);
+
+            Log.i("jObj2", String.valueOf(assData));
+            oos.writeObject(assData);
+            // Closing our object stream which also closes the wrapped stream.
+
+            oos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.i("jObj2", "Not Doing It");
+        }
+
+
+
+
+
+        classes.remove(position);
         cellAdapter.notifyDataSetChanged();
         return false;
 

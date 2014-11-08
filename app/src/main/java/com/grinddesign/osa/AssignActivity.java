@@ -1,6 +1,7 @@
 package com.grinddesign.osa;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,12 +13,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
-public class AssignActivity extends Activity implements AdapterView.OnItemClickListener {
+public class AssignActivity extends Activity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
     ArrayList<AssignObject> assData;
     ArrayList<String> assign = new ArrayList<String>();
@@ -28,6 +31,7 @@ public class AssignActivity extends Activity implements AdapterView.OnItemClickL
     ArrayList<String> em = new ArrayList<String>();
     ArrayList<String> chSer = new ArrayList<String>();
     ArrayList<String> chHan = new ArrayList<String>();
+    ArrayList<AssignObject> crazyGlue = new ArrayList<AssignObject>();
     static ArrayAdapter<String> assAdapter;
     String classTime;
 
@@ -96,6 +100,7 @@ public class AssignActivity extends Activity implements AdapterView.OnItemClickL
         }
         assAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, assign);
         lv.setOnItemClickListener(this);
+        lv.setOnItemLongClickListener(this);
         lv.setAdapter(assAdapter);
 
     }
@@ -144,5 +149,75 @@ public class AssignActivity extends Activity implements AdapterView.OnItemClickL
         assPass.putExtra("service", serve);
         assPass.putExtra("handle", hand);
         startActivity(assPass);
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long l) {
+        try {
+            Log.i("step", "1");
+            FileInputStream fis = openFileInput("ass.dat");
+            Log.i("step", "2");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            Log.i("read", "trying to read saved file");
+            if (assData == null) {
+                assData = new ArrayList<AssignObject>();
+                Log.i("TEST", "TEST");
+            }
+            assData = (ArrayList<AssignObject>) ois.readObject();
+            Log.i("read", String.valueOf(assData));
+            crazyGlue.addAll(assData);
+
+            ois.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        Log.i("check kill", "Click Click Boom");
+        for (i = 0; i < assign.size(); i++) {
+            assy = assign.get(position);
+            Log.i("check class", String.valueOf(assy));
+            for (c = 0; c < crazyGlue.size(); c++) {
+                AssignObject subData = crazyGlue.get(c);
+                String assName = subData.getAss();
+                Log.i("read", String.valueOf(assy));
+                if (assy.equals(assName)) {
+                    crazyGlue.remove(subData);
+                }
+            }
+        }
+
+        try {
+            Log.i("jObj2", "am I here");
+            FileOutputStream fos = openFileOutput("ass.dat", Context.MODE_PRIVATE);
+
+            // Wrapping our file stream.
+            Log.i("jObj2", "am I here2");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            // Writing the serializable object to the file
+            Log.i("jObj2", "am I here3");
+            assData = new ArrayList<AssignObject>();
+
+            assData.addAll(crazyGlue);
+
+            Log.i("jObj2", String.valueOf(assData));
+            oos.writeObject(assData);
+            // Closing our object stream which also closes the wrapped stream.
+
+            oos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.i("jObj2", "Not Doing It");
+        }
+
+
+
+
+
+        assign.remove(position);
+        assAdapter.notifyDataSetChanged();
+        return false;
     }
 }
