@@ -5,9 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Add</string>
     <string name="action_del">Delete</string>
-    <string name="title_activity_assign">AssignActivity</string>
-    <string name="title_activity_adetail">ADetailActivity</string>
-    <string name="title_activity_aadd">AAddActivity</string>
+    <string name="title_activity_assign">Assignments</string>
+    <string name="title_activity_adetail">Details</string>
+    <string name="title_activity_aadd">Add Assignments</string>
 
     <string-array name="loads">
         <item>Assignments</item>

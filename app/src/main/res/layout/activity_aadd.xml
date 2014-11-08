@@ -114,9 +114,8 @@
         android:text="Link:"
         android:id="@+id/textView12"
         android:layout_below="@+id/assDetail"
-        android:layout_alignLeft="@+id/assDetail"
-        android:layout_alignStart="@+id/assDetail"
-        android:layout_marginTop="40dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="fill_parent"
@@ -130,11 +129,10 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/assLink"
         android:layout_alignLeft="@+id/assLink"
         android:layout_alignStart="@+id/assLink"
-        android:layout_marginTop="38dp"
-        android:id="@+id/linearLayout5">
+        android:id="@+id/linearLayout5"
+        android:layout_below="@+id/assLink">
 
         <TextView
             android:layout_width="wrap_content"
