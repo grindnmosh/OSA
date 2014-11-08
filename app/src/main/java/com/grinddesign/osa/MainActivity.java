@@ -156,8 +156,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
         Log.i("check kill", "Click Click Boom");
         for (i = 0; i < crazyGlue.size(); i++) {
-            AssignObject data = crazyGlue.get(position);
-            classy = data.getCl();
+            classy = classes.get(position);
             Log.i("check class", String.valueOf(classy));
             for (c = 0; c < crazyGlue.size(); c++) {
                 AssignObject subData = crazyGlue.get(c);
