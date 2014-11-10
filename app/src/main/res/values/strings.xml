@@ -5,6 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Add</string>
     <string name="action_del">Delete</string>
+    <string name="action_delall">Delete All</string>
     <string name="title_activity_assign">Assignments</string>
     <string name="title_activity_adetail">Details</string>
     <string name="title_activity_aadd">Add Assignments</string>
@@ -17,5 +18,6 @@
     </string-array>
 
     <string name="title_activity_splash_screen">SplashScreen</string>
+    <string name="title_activity_pmain">Time Management</string>
 
 </resources>

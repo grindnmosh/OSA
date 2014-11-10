@@ -63,7 +63,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout2"
-        android:layout_toStartOf="@+id/assDue"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/linearLayout3">

@@ -32,6 +32,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     String classy;
     String[] loads;
     ListView lv;
+    Spinner s;
     static ArrayAdapter<String> cellAdapter;
     ArrayList<String> classes = new ArrayList<String>();
     ArrayList<String> classObj = new ArrayList<String>();
@@ -42,7 +43,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Spinner s = (Spinner) findViewById(R.id.spinner);
+        s = (Spinner) findViewById(R.id.spinner);
         lv = (ListView) findViewById(R.id.listView);
         newButt = (Button) findViewById(R.id.newButt);
         newButt.setOnClickListener(myhandle);
@@ -98,8 +99,24 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
         }
         loads = getResources().getStringArray(R.array.loads);
-        ArrayAdapter<String> loadsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, loads);
+        final ArrayAdapter<String> loadsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, loads);
         s.setAdapter(loadsAdapter);
+
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (loads[i].equals("Time Management")) {
+                    Intent time = new Intent(MainActivity.this, PMainActivity.class);
+                    MainActivity.this.startActivity(time);
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         cellAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, classes);
         lv.setOnItemClickListener(this);
@@ -114,6 +131,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             startActivity(adder);
         }
     };
+
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

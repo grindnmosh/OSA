@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.grinddesign.osa.SplashScreen"
+            android:name=".SplashScreen"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar" >
@@ -21,7 +21,6 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
-
         </activity>
         <activity
             android:name=".AssignActivity"
@@ -47,7 +46,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.grinddesign.osa.MainActivity" />
         </activity>
-
+        <activity
+            android:name=".PMainActivity"
+            android:label="@string/title_activity_pmain" >
+        </activity>
     </application>
 
 </manifest>
