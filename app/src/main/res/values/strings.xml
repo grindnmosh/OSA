@@ -19,5 +19,7 @@
 
     <string name="title_activity_splash_screen">SplashScreen</string>
     <string name="title_activity_pmain">Time Management</string>
+    <string name="title_activity_padd">New Time Management</string>
+    <string name="title_activity_pdetail">Time Management</string>
 
 </resources>

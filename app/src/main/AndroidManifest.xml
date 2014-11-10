@@ -50,6 +50,22 @@
             android:name=".PMainActivity"
             android:label="@string/title_activity_pmain" >
         </activity>
+        <activity
+            android:name=".PAddActivity"
+            android:label="@string/title_activity_padd"
+            android:parentActivityName=".PMainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.grinddesign.osa.PMainActivity" />
+        </activity>
+        <activity
+            android:name=".PDetailActivity"
+            android:label="@string/title_activity_pdetail"
+            android:parentActivityName=".PMainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.grinddesign.osa.PMainActivity" />
+        </activity>
     </application>
 
 </manifest>
