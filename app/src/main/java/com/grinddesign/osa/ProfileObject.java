@@ -34,7 +34,7 @@ public class ProfileObject implements Serializable {
                          String _num1, String _num2, String _num3, String _num4, String _num5)
     {
         studName = _studName;
-        studName = _studNum;
+        studNum = _studNum;
         schName = _schName;
         dept1 = _dept1;
         dept2 = _dept2;
