@@ -5,8 +5,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 
 public class PAddActivity extends Activity {
+
+    ArrayList<ProjectObject> pData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

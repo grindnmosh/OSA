@@ -11,9 +11,9 @@
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:id="@+id/imageView"
+        android:id="@+id/proImg"
         android:src="@drawable/ic_launcher"
-        android:layout_toStartOf="@+id/button"
+        android:layout_toStartOf="@+id/imgButt"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -22,8 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Profile Image"
-        android:id="@+id/button"
-        android:layout_alignBottom="@+id/imageView"
+        android:id="@+id/imgButt"
+        android:layout_alignBottom="@+id/proImg"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -32,7 +32,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/proImg"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:weightSum="1">
@@ -49,9 +49,8 @@
             android:layout_width="141dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
             android:ems="10"
-            android:id="@+id/editText11"
+            android:id="@+id/studName"
             android:layout_weight="0.68" />
     </LinearLayout>
 
@@ -76,7 +75,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText12"
+            android:id="@+id/studNum"
             android:layout_weight="0.84" />
     </LinearLayout>
 
@@ -85,7 +84,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout2"
-        android:layout_toStartOf="@+id/button"
+        android:layout_toStartOf="@+id/imgButt"
         android:layout_below="@+id/linearLayout3"
         android:layout_alignRight="@+id/linearLayout3"
         android:layout_alignEnd="@+id/linearLayout3">
@@ -100,7 +99,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText13"
+            android:id="@+id/schName"
             android:layout_weight="1" />
     </LinearLayout>
 
@@ -145,7 +144,7 @@
         <EditText
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText" />
+            android:id="@+id/dept1" />
 
         <Space
             android:layout_width="100dp"
@@ -156,7 +155,7 @@
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/editText6"
+            android:id="@+id/num1"
             android:layout_weight="1" />
 
     </LinearLayout>
@@ -173,7 +172,7 @@
         <EditText
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText2" />
+            android:id="@+id/dept2" />
 
         <Space
             android:layout_width="100dp"
@@ -185,7 +184,7 @@
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/editText7"
+            android:id="@+id/num2"
             android:layout_weight="1" />
 
     </LinearLayout>
@@ -196,14 +195,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout7"
         android:layout_below="@+id/linearLayout6"
-        android:layout_toStartOf="@+id/button"
+        android:layout_toStartOf="@+id/imgButt"
         android:layout_alignRight="@+id/linearLayout6"
         android:layout_alignEnd="@+id/linearLayout6">
 
         <EditText
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText3" />
+            android:id="@+id/dept3" />
 
         <Space
             android:layout_width="100dp"
@@ -215,7 +214,7 @@
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/editText9"
+            android:id="@+id/num3"
             android:layout_weight="1" />
 
     </LinearLayout>
@@ -232,7 +231,7 @@
         <EditText
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText4" />
+            android:id="@+id/dept4" />
 
         <Space
             android:layout_width="100dp"
@@ -244,7 +243,7 @@
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/editText8"
+            android:id="@+id/num4"
             android:layout_weight="1" />
 
     </LinearLayout>
@@ -261,7 +260,7 @@
         <EditText
             android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText5" />
+            android:id="@+id/dept5" />
 
         <Space
             android:layout_width="100dp"
@@ -273,9 +272,21 @@
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/editText10"
+            android:id="@+id/num5"
             android:layout_weight="1" />
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgProButt"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/linearLayout"
+        android:layout_alignRight="@+id/proImg"
+        android:layout_alignEnd="@+id/proImg"
+        android:background="#00ffffff" />
 
 </RelativeLayout>
