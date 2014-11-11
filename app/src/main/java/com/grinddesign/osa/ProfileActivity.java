@@ -12,35 +12,33 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 
-public class PMainActivity extends Activity {
+public class ProfileActivity extends Activity {
 
     String[] loads;
-    ListView lv;
     Spinner s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pmain);
+        setContentView(R.layout.activity_profile);
 
-        s = (Spinner) findViewById(R.id.pspinner);
-        lv = (ListView) findViewById(R.id.plistView);
+        s = (Spinner) findViewById(R.id.prospin);
 
         loads = getResources().getStringArray(R.array.loads);
         final ArrayAdapter<String> loadsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, loads);
         s.setAdapter(loadsAdapter);
-        s.setSelection(1);
+        s.setSelection(2);
 
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (loads[i].equals("Assignments")) {
-                    Intent main = new Intent(PMainActivity.this, MainActivity.class);
-                    PMainActivity.this.startActivity(main);
+                    Intent main = new Intent(ProfileActivity.this, MainActivity.class);
+                    ProfileActivity.this.startActivity(main);
                 }
-                else if (loads[i].equals("Profile")) {
-                    Intent pro = new Intent(PMainActivity.this, ProfileActivity.class);
-                    PMainActivity.this.startActivity(pro);
+                else if (loads[i].equals("Time Management")) {
+                    Intent time = new Intent(ProfileActivity.this, PMainActivity.class);
+                    ProfileActivity.this.startActivity(time);
                 }
 
             }
@@ -55,7 +53,7 @@ public class PMainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.pmain, menu);
+        getMenuInflater().inflate(R.menu.profile, menu);
         return true;
     }
 
@@ -65,9 +63,9 @@ public class PMainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_pnew) {
-            Intent pAddNew = new Intent(this, PAddActivity.class);
-            this.startActivity(pAddNew);
+        if (id == R.id.action_edit) {
+            Intent proNew = new Intent(this, ProEditActivity.class);
+            this.startActivity(proNew);
         }
         return super.onOptionsItemSelected(item);
     }

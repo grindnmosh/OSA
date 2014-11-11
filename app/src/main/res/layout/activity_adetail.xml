@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="   for   "
-            android:id="@+id/textView" />
+            android:id="@+id/studName" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Details:  "
-        android:id="@+id/textView3"
+        android:id="@+id/studNum"
         android:layout_below="@+id/linearLayout2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -80,7 +80,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/detD"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/studNum"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"

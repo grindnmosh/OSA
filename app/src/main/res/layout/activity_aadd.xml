@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Details:"
-        android:id="@+id/textView11"
+        android:id="@+id/num3"
         android:layout_below="@+id/linearLayout3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -102,7 +102,7 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/assDetail"
-        android:layout_below="@+id/textView11"
+        android:layout_below="@+id/num3"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -111,7 +111,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Link:"
-        android:id="@+id/textView12"
+        android:id="@+id/dept4"
         android:layout_below="@+id/assDetail"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -120,7 +120,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/assLink"
-        android:layout_below="@+id/textView12"
+        android:layout_below="@+id/dept4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

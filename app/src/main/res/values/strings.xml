@@ -6,9 +6,12 @@
     <string name="action_settings">Add</string>
     <string name="action_del">Delete</string>
     <string name="action_delall">Delete All</string>
+    <string name="action_edit">Edit</string>
     <string name="title_activity_assign">Assignments</string>
     <string name="title_activity_adetail">Details</string>
     <string name="title_activity_aadd">Add Assignments</string>
+    <string name="action_save">Save</string>
+
 
     <string-array name="loads">
         <item>Assignments</item>
@@ -21,5 +24,7 @@
     <string name="title_activity_pmain">Time Management</string>
     <string name="title_activity_padd">New Time Management</string>
     <string name="title_activity_pdetail">Time Management</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_pro_edit">ProEditActivity</string>
 
 </resources>

@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        s = (Spinner) findViewById(R.id.spinner);
+        s = (Spinner) findViewById(R.id.prospin);
         lv = (ListView) findViewById(R.id.listView);
         newButt = (Button) findViewById(R.id.newButt);
         newButt.setOnClickListener(myhandle);
@@ -108,6 +108,10 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                 if (loads[i].equals("Time Management")) {
                     Intent time = new Intent(MainActivity.this, PMainActivity.class);
                     MainActivity.this.startActivity(time);
+                }
+                else if (loads[i].equals("Profile")) {
+                    Intent pro = new Intent(MainActivity.this, ProfileActivity.class);
+                    MainActivity.this.startActivity(pro);
                 }
 
             }

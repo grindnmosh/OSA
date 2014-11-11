@@ -66,6 +66,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.grinddesign.osa.PMainActivity" />
         </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profile" >
+        </activity>
+        <activity
+            android:name=".ProEditActivity"
+            android:label="@string/title_activity_pro_edit"
+            android:parentActivityName=".ProfileActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.grinddesign.osa.ProfileActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,8 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.grinddesign.osa.AAddActivity" >
-    <item android:id="@+id/action_save"
-        android:title="@string/action_save"
+    tools:context="com.grinddesign.osa.ProfileActivity" >
+    <item android:id="@+id/action_edit"
+        android:title="@string/action_edit"
         android:orderInCategory="100"
         android:showAsAction="always" />
 </menu>
