@@ -78,6 +78,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.grinddesign.osa.ProfileActivity" />
         </activity>
+        <activity
+            android:name=".TimeCell"
+            android:label="@string/title_activity_time_cell" >
+        </activity>
     </application>
 
 </manifest>

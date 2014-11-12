@@ -12,7 +12,6 @@
     <string name="title_activity_aadd">Add Assignments</string>
     <string name="action_save">Save</string>
 
-
     <string-array name="loads">
         <item>Assignments</item>
         <item>Time Management</item>
@@ -26,5 +25,6 @@
     <string name="title_activity_pdetail">Time Management</string>
     <string name="title_activity_profile">Profile</string>
     <string name="title_activity_pro_edit">ProEditActivity</string>
+    <string name="title_activity_time_cell">TimeCell</string>
 
 </resources>
