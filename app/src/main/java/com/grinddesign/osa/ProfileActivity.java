@@ -2,17 +2,28 @@ package com.grinddesign.osa;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -23,6 +34,7 @@ public class ProfileActivity extends Activity {
 
     String[] loads;
     Spinner s;
+    Button proButt;
 
     ArrayList<ProfileObject> proData;
     TextView name;
@@ -38,6 +50,11 @@ public class ProfileActivity extends Activity {
     TextView p3;
     TextView p4;
     TextView p5;
+    ImageView proImg;
+
+    String imgFile;
+
+    ImageLoader imgLoader;
 
     @Override
 
@@ -59,6 +76,14 @@ public class ProfileActivity extends Activity {
         p3 = (TextView) findViewById(R.id.num3);
         p4 = (TextView) findViewById(R.id.num4);
         p5 = (TextView) findViewById(R.id.num5);
+        proImg = (ImageView) findViewById(R.id.proImgMain);
+        proButt = (Button) findViewById(R.id.proButt);
+        proButt.setOnClickListener(myhandle);
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
+                .defaultDisplayImageOptions(DisplayImageOptions.createSimple())
+                .build();
+        ImageLoader.getInstance().init(config);
 
         Log.i("step", "0");
         try {
@@ -84,6 +109,9 @@ public class ProfileActivity extends Activity {
         }
 
         if (proData != null) {
+            proButt.setVisibility(View.INVISIBLE);
+            proImg.setVisibility(View.VISIBLE);
+
             ProfileObject data = proData.get(0);
             name.setText(data.getStudName());
             num.setText(data.getStudNum());
@@ -98,6 +126,15 @@ public class ProfileActivity extends Activity {
             p3.setText(data.getNum3());
             p4.setText(data.getNum4());
             p5.setText(data.getNum5());
+            imgFile = data.getImg();
+            Log.i("image", imgFile);
+
+            ImageLoader.getInstance().displayImage(imgFile, proImg);
+        }
+        else
+        {
+            proButt.setVisibility(View.VISIBLE);
+            proImg.setVisibility(View.INVISIBLE);
         }
 
         s = (Spinner) findViewById(R.id.prospin);
@@ -126,6 +163,13 @@ public class ProfileActivity extends Activity {
             }
         });
     }
+
+    View.OnClickListener myhandle = new View.OnClickListener() {
+        public void onClick(View v) {
+            Intent newPro = new Intent(ProfileActivity.this, ProEditActivity.class);
+            startActivity(newPro);
+        }
+    };
 
 
     @Override

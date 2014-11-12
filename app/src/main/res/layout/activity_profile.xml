@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:id="@+id/proImg"
+        android:id="@+id/proImgMain"
         android:src="@drawable/ic_launcher"
         android:layout_marginLeft="46dp"
         android:layout_below="@+id/prospin"
@@ -23,9 +23,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/studName"
-        android:layout_alignTop="@+id/proImg"
-        android:layout_toRightOf="@+id/proImg"
-        android:layout_toEndOf="@+id/proImg"
+        android:layout_alignTop="@+id/proImgMain"
+        android:layout_toRightOf="@+id/proImgMain"
+        android:layout_toEndOf="@+id/proImgMain"
         android:layout_marginTop="42dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -35,8 +35,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/studNum"
-        android:layout_toEndOf="@+id/proImg"
-        android:layout_alignBottom="@+id/proImg"
+        android:layout_toEndOf="@+id/proImgMain"
+        android:layout_alignBottom="@+id/proImgMain"
         android:layout_alignLeft="@+id/studName"
         android:layout_alignStart="@+id/studName"
         android:layout_alignParentRight="true"
@@ -95,8 +95,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/prospin"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/proImg"
-        android:layout_alignEnd="@+id/proImg"
+        android:layout_alignRight="@+id/proImgMain"
+        android:layout_alignEnd="@+id/proImgMain"
         android:spinnerMode="dialog" />
 
     <LinearLayout
@@ -208,5 +208,13 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/num5" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pro_butt"
+        android:id="@+id/proButt"
+        android:layout_alignTop="@+id/linearLayout2"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

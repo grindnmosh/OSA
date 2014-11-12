@@ -2,12 +2,23 @@ package com.grinddesign.osa;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -17,7 +28,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
-public class ProEditActivity extends Activity {
+public class ProEditActivity extends Activity implements DialogInterface.OnClickListener, View.OnClickListener {
 
     ArrayList<ProfileObject> proData;
     TextView name;
@@ -33,6 +44,7 @@ public class ProEditActivity extends Activity {
     TextView p3;
     TextView p4;
     TextView p5;
+    ImageView proImg;
 
     String na;
     String sn;
@@ -47,6 +59,17 @@ public class ProEditActivity extends Activity {
     String ph3;
     String ph4;
     String ph5;
+    String imgPath;
+    String imgFile;
+
+
+    Button mainImg;
+    Button proImgbutt;
+
+
+
+
+    Intent photoPickerIntent;
 
 
     @Override
@@ -67,6 +90,18 @@ public class ProEditActivity extends Activity {
         p3 = (TextView) findViewById(R.id.num3);
         p4 = (TextView) findViewById(R.id.num4);
         p5 = (TextView) findViewById(R.id.num5);
+        proImg = (ImageView) findViewById(R.id.proImgMain);
+
+        mainImg = (Button) findViewById(R.id.imgButt);
+        proImgbutt = (Button) findViewById(R.id.imgProButt);
+
+        mainImg.setOnClickListener(this);
+        proImgbutt.setOnClickListener(this);
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
+                .defaultDisplayImageOptions(DisplayImageOptions.createSimple())
+                .build();
+        ImageLoader.getInstance().init(config);
 
         Log.i("step", "0");
         try {
@@ -106,6 +141,11 @@ public class ProEditActivity extends Activity {
             p3.setText(data.getNum3());
             p4.setText(data.getNum4());
             p5.setText(data.getNum5());
+            imgPath = data.getImg();
+
+            Log.i("image", imgPath);
+
+            ImageLoader.getInstance().displayImage(imgPath, proImg);
         }
 
     }
@@ -158,7 +198,7 @@ public class ProEditActivity extends Activity {
 
 
 
-                proData.add(new ProfileObject(na, sn, sc, de1, de2, de3, de4, de5, ph1, ph2, ph3, ph4, ph5));
+                proData.add(new ProfileObject(na, sn, sc, de1, de2, de3, de4, de5, ph1, ph2, ph3, ph4, ph5, imgPath));
                 Log.i("jObj2", String.valueOf(proData));
                 oos.writeObject(proData);
 
@@ -175,4 +215,50 @@ public class ProEditActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onClick(DialogInterface dialogInterface, int i) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.imgButt:
+                photoPickerIntent = new Intent(Intent.ACTION_PICK);
+                photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, 1);
+                break;
+            case R.id.imgProButt:
+                photoPickerIntent = new Intent(Intent.ACTION_PICK);
+                photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, 1);
+                break;
+
+        }
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode,
+                                    Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+
+        if (resultCode == RESULT_OK) {
+            Uri photoUri = intent.getData();
+
+            if (photoUri != null) {
+                try {
+                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(this
+                            .getContentResolver(), photoUri);
+                    proImg.setImageBitmap(bitmap);
+                    imgPath = photoUri.toString();
+                    Log.i("Image Saved", imgPath);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
+
 }

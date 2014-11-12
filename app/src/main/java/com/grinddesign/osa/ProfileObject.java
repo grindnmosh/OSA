@@ -26,12 +26,13 @@ public class ProfileObject implements Serializable {
     private String num3;
     private String num4;
     private String num5;
+    private String img;
 
     private static final long serialVersionUID = 491345791492131449L;
 
     public ProfileObject(String _studName, String _studNum, String _schName,
                          String _dept1, String _dept2, String _dept3, String _dept4, String _dept5,
-                         String _num1, String _num2, String _num3, String _num4, String _num5)
+                         String _num1, String _num2, String _num3, String _num4, String _num5, String _img)
     {
         studName = _studName;
         studNum = _studNum;
@@ -46,6 +47,7 @@ public class ProfileObject implements Serializable {
         num3 = _num3;
         num4 = _num4;
         num5 = _num5;
+        img = _img;
     }
 
     public void setStudName (String studName)
@@ -112,6 +114,11 @@ public class ProfileObject implements Serializable {
         this.num5 = num5;
     }
 
+    public void setImg (String img)
+    {
+        this.img = img;
+    }
+
     public String getStudName()
     {
         return studName;
@@ -175,6 +182,11 @@ public class ProfileObject implements Serializable {
     public String getNum5()
     {
         return num5;
+    }
+
+    public String getImg()
+    {
+        return img;
     }
 
 }
