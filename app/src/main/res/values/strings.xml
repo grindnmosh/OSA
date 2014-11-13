@@ -28,5 +28,6 @@
     <string name="title_activity_time_cell">TimeCell</string>
 
     <string name="pro_butt">Create Your Profile</string>
+    <string name="proj_butt">Create Your First Time Management item</string>
 
 </resources>
