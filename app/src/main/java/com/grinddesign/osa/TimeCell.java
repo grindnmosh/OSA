@@ -30,8 +30,8 @@ public class TimeCell extends ArrayAdapter<String> {
     public View getView(final int position, View convertView, ViewGroup parent) {
         Log.i("cust", "adapter");
 
-        days = PDetailActivity.daysArray.get(position);
-        hourly = PDetailActivity.perDayArray.get(position);
+        days = PDetailFragment.daysArray.get(position);
+        hourly = PDetailFragment.perDayArray.get(position);
 
 
 
