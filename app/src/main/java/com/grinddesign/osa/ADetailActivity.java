@@ -27,9 +27,6 @@ public class ADetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_adetail);
         ADetailFragment fragment = (ADetailFragment) getFragmentManager().findFragmentById(R.id.fragmentAD);
-
-
-
         fragment.loadMe();
     }
 
