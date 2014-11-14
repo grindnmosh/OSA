@@ -51,8 +51,8 @@ public class PMainActivity extends Activity {
         }
         else if (id == R.id.action_delall) {
             deleteFile("proj.dat");
-
-
+            PMainFragment muggle = (PMainFragment) getFragmentManager().findFragmentById(R.id.fragmentPM);
+            muggle.deleteAll();
         }
 
 

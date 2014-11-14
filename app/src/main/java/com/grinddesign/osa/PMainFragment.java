@@ -34,6 +34,8 @@ public class PMainFragment extends Fragment implements AdapterView.OnItemClickLi
     String day;
     String hour;
     String p;
+    Spinner s;
+    ListView lv;
     int i;
     int c;
     ArrayList<String> projects = new ArrayList<String>();
@@ -55,8 +57,8 @@ public class PMainFragment extends Fragment implements AdapterView.OnItemClickLi
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_pmain, container, false);
 
-        final Spinner s = (Spinner) view.findViewById(R.id.pspinner);
-        final ListView lv = (ListView) view.findViewById(R.id.plistView);
+        s = (Spinner) view.findViewById(R.id.pspinner);
+        lv = (ListView) view.findViewById(R.id.plistView);
         projButt = (Button) view.findViewById(R.id.projButt);
         projButt.setOnClickListener(myhandler);
 
@@ -233,10 +235,10 @@ public class PMainFragment extends Fragment implements AdapterView.OnItemClickLi
     public void deleteAll() {
         projects = new ArrayList<String>();
         projAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, android.R.id.text1, projects);
-        //lv.setOnItemClickListener(this);
-        //lv.setOnItemLongClickListener(this);
+        lv.setOnItemClickListener(this);
+        lv.setOnItemLongClickListener(this);
 
-        //lv.setAdapter(projAdapter);
+        lv.setAdapter(projAdapter);
 
         projButt.setVisibility(View.VISIBLE);
     }
