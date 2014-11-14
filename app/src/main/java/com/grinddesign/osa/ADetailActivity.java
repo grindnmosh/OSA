@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.grinddesign.osa.ADetailActivity;
+
 
 public class ADetailActivity extends Activity {
 
@@ -23,27 +25,12 @@ public class ADetailActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adetail);
-        ass = (TextView) findViewById(R.id.assD);
-        cla = (TextView) findViewById(R.id.classD);
-        due = (TextView) findViewById(R.id.dueD);
-        det = (TextView) findViewById(R.id.detD);
-        link = (TextView) findViewById(R.id.linkD);
-        ins = (TextView) findViewById(R.id.insD);
-        em = (TextView) findViewById(R.id.emD);
-        ser = (TextView) findViewById(R.id.serD);
-        han = (TextView) findViewById(R.id.hanD);
+        setContentView(R.layout.fragment_adetail);
+        ADetailFragment fragment = (ADetailFragment) getFragmentManager().findFragmentById(R.id.fragmentAD);
 
-        Intent i = getIntent();
-        ass.setText(i.getStringExtra("item"));
-        cla.setText(i.getStringExtra("class"));
-        due.setText(i.getStringExtra("due"));
-        det.setText(i.getStringExtra("detail"));
-        link.setText(i.getStringExtra("link"));
-        ins.setText(i.getStringExtra("instruct"));
-        em.setText(i.getStringExtra("email"));
-        ser.setText(i.getStringExtra("service"));
-        han.setText(i.getStringExtra("handle"));
+
+
+        fragment.loadMe();
     }
 
 
