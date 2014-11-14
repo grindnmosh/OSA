@@ -49,7 +49,7 @@ public class ProfileFragment extends Fragment {
     TextView p5;
     ImageView proImg;
 
-    String imgFile;
+    String imgFile = "";
 
     Context context;
 

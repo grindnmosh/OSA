@@ -60,7 +60,7 @@ public class ProEditFragment extends Fragment implements DialogInterface.OnClick
     String ph3;
     String ph4;
     String ph5;
-    String imgPath;
+    String imgPath = "";
 
     Button mainImg;
     Button proImgbutt;
