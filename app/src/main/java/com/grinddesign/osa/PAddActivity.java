@@ -19,28 +19,23 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
-public class PAddActivity extends Activity {
+public class PAddActivity extends Activity implements PAddFragment.onSave {
 
-    ArrayList<ProjectObject> pData;
-    TextView name;
-    TextView days;
-    TextView hours;
 
-    String prn;
-    String prd;
-    String prh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_padd);
-
-        name = (TextView) findViewById(R.id.prname);
-        days = (TextView) findViewById(R.id.days);
-        hours = (TextView) findViewById(R.id.hours);
-
+        setContentView(R.layout.fragment_padd);
     }
 
+    @Override
+    public void saved(int i) {
+        Intent pLoad = new Intent(this, PMainActivity.class);
+        pLoad.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Log.i("TAPPED OUT", "Reaching For Me");
+        startActivity(pLoad);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -56,64 +51,8 @@ public class PAddActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_save) {
-            Log.i("step", "0");
-            try {
-                Log.i("step", "1");
-                FileInputStream fis = openFileInput("proj.dat");
-                Log.i("step", "2");
-                ObjectInputStream ois = new ObjectInputStream(fis);
-                Log.i("read", "trying to read saved file");
-                if (pData == null) {
-                    pData = new ArrayList<ProjectObject>();
-                    Log.i("TEST", "TEST");
-                }
-                pData = (ArrayList<ProjectObject>) ois.readObject();
-                Log.i("read", String.valueOf(pData));
-
-
-
-                ois.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-
-            prn = name.getText().toString();
-            prd = days.getText().toString();
-            prh = hours.getText().toString();
-
-
-            try {
-                Log.i("jObj2", "am I here");
-                FileOutputStream fos = openFileOutput("proj.dat", Context.MODE_PRIVATE);
-
-                // Wrapping our file stream.
-                Log.i("jObj2", "am I here2");
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
-
-                // Writing the serializable object to the file
-                Log.i("jObj2", "am I here3");
-                if (pData == null) {
-                    pData = new ArrayList<ProjectObject>();
-                }
-
-
-
-                pData.add(new ProjectObject(prn, prd, prh));
-                Log.i("jObj2", String.valueOf(pData));
-                oos.writeObject(pData);
-                // Closing our object stream which also closes the wrapped stream.
-
-                oos.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-                Log.i("jObj2", "Not Doing It");
-            }
-            Intent pLoad = new Intent(this, PMainActivity.class);
-            pLoad.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            Log.i("TAPPED OUT", "Reaching For Me");
-            startActivity(pLoad);
+            PAddFragment praggle = (PAddFragment) getFragmentManager().findFragmentById(R.id.fragmentPA);
+            praggle.savingMe();
         }
         return super.onOptionsItemSelected(item);
     }
