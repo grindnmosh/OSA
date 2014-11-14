@@ -2,14 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.grinddesign.osa.PDetailFragment">
+    tools:context="com.grinddesign.osa.ProEditFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.grinddesign.osa.PDetailFragment"
-        android:id="@+id/fragmentPD"
+        android:name="com.grinddesign.osa.ProEditFragment"
+        android:id="@+id/fragmentPE"
         android:layout_gravity="left|top" />
 </FrameLayout>
