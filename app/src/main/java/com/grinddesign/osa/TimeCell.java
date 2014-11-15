@@ -13,25 +13,34 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class TimeCell extends ArrayAdapter<String> {
 
+
+
+
     private Context context;
-    String days;
-    String hourly;
-    public TimeCell(Context context, int resource, List<String> objects) {
-        super(context, resource, objects);
+    private ArrayList<String> arrayLister = PDetailFragment.daysArray;
+
+    public TimeCell(Context context, int resource, ArrayList<String> arrayLister) {
+
+        super(context, resource, arrayLister);
+        Log.i("cust", "adapter1");
         this.context = context;
+        this.arrayLister = arrayLister;
     }
+
+
 
     public View getView(final int position, View convertView, ViewGroup parent) {
         Log.i("cust", "adapter");
 
-        days = PDetailFragment.daysArray.get(position);
-        hourly = PDetailFragment.perDayArray.get(position);
+        String days = arrayLister.get(position);
+        String hourly = PDetailFragment.perDayArray.get(position);
 
 
 
@@ -47,9 +56,6 @@ public class TimeCell extends ArrayAdapter<String> {
         TextView tvSub  = (TextView) view.findViewById(R.id.perDayText);
         tvSub.setText(hourly);
 
-
-
-        Log.i("cust", "ready to return");
         return view;
     }
 }
