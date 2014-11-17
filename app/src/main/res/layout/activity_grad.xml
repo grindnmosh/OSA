@@ -17,7 +17,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:src="@drawable/image2"
-        android:contentDescription="timerbg" />
+        android:contentDescription="@string/tbg" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -76,5 +76,14 @@
         android:spinnerMode="dropdown"
         android:background="#FFFFFF"
         android:layout_alignParentEnd="true" />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker"
+        android:layout_below="@+id/spingt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/linearLayout" />
 
 </RelativeLayout>

@@ -33,5 +33,6 @@
     <string name="countdowns">countdowns</string>
     <string name="title_activity_tadd">New Custom Timer</string>
     <string name="timer">Timer Name:  </string>
+    <string name="tbg">timerbg</string>
 
 </resources>
