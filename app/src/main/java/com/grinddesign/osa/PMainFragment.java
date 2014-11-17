@@ -125,6 +125,10 @@ public class PMainFragment extends Fragment implements AdapterView.OnItemClickLi
                     Intent pro = new Intent(context, ProfileActivity.class);
                     PMainFragment.this.startActivity(pro);
                 }
+                else if (loads[i].equals("Extras")) {
+                    Intent grad = new Intent(context, GradActivity.class);
+                    PMainFragment.this.startActivity(grad);
+                }
 
             }
             @Override

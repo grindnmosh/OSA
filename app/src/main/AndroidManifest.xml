@@ -85,6 +85,14 @@
             android:name=".TimeCell"
             android:label="@string/title_activity_time_cell" >
         </activity>
+        <activity
+            android:name=".GradActivity"
+            android:label="@string/title_activity_grad" >
+        </activity>
+        <activity
+            android:name=".TAddActivity"
+            android:label="@string/title_activity_tadd" >
+        </activity>
     </application>
 
 </manifest>

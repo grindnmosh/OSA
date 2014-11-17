@@ -154,6 +154,10 @@ public class ProfileFragment extends Fragment {
                     Intent time = new Intent(context, PMainActivity.class);
                     ProfileFragment.this.startActivity(time);
                 }
+                else if (loads[i].equals("Extras")) {
+                    Intent grad = new Intent(context, GradActivity.class);
+                    ProfileFragment.this.startActivity(grad);
+                }
 
             }
             @Override

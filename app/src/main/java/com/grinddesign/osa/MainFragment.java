@@ -121,6 +121,10 @@ public class MainFragment extends Fragment implements AdapterView.OnItemClickLis
                     Intent pro = new Intent(context, ProfileActivity.class);
                     MainFragment.this.startActivity(pro);
                 }
+                else if (loads[i].equals("Extras")) {
+                    Intent grad = new Intent(context, GradActivity.class);
+                    MainFragment.this.startActivity(grad);
+                }
 
             }
 
