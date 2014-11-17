@@ -91,7 +91,11 @@
         </activity>
         <activity
             android:name=".TAddActivity"
-            android:label="@string/title_activity_tadd" >
+            android:label="@string/title_activity_tadd"
+            android:parentActivityName=".GradActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.grinddesign.osa.GradActivity" />
         </activity>
     </application>
 
