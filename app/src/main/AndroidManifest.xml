@@ -97,6 +97,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.grinddesign.osa.GradActivity" />
         </activity>
+        <activity
+            android:name=".CustCell"
+            android:label="@string/title_activity_cust_cell" >
+        </activity>
     </application>
 
 </manifest>

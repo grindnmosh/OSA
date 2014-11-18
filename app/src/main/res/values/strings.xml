@@ -57,5 +57,6 @@
     <string name="phone">Phone:</string>
     <string name="proimage">proimage</string>
     <string name="mdefault">Medium Text</string>
+    <string name="title_activity_cust_cell">CustCell</string>
 
 </resources>
