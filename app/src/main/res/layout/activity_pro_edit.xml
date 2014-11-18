@@ -16,12 +16,13 @@
         android:layout_toStartOf="@+id/imgButt"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/defimg" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Profile Image"
+        android:text="@string/addpro"
         android:id="@+id/imgButt"
         android:layout_alignBottom="@+id/proImgMain"
         android:layout_alignParentRight="true"
@@ -41,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Student Name: "
+            android:text="@string/studname"
             android:id="@+id/textView2"
             android:layout_weight="0.13" />
 
@@ -68,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Student ID: "
+            android:text="@string/studid"
             android:id="@+id/textView3"
             android:layout_weight="0.10" />
 
@@ -76,7 +77,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/studNum"
-            android:layout_weight="0.84" />
+            android:layout_weight="0.84"
+            android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
@@ -93,14 +95,15 @@
             android:layout_width="138dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="School Name: "
+            android:text="@string/sname"
             android:id="@+id/dayText" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/schName"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
@@ -114,10 +117,10 @@
         android:weightSum="1">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Dept:"
+            android:text="@string/dept"
             android:id="@+id/textView4"
             android:layout_weight="1.22" />
 
@@ -125,7 +128,7 @@
             android:layout_width="172dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Phone:"
+            android:text="@string/phone"
             android:id="@+id/textView5" />
 
     </LinearLayout>
@@ -140,10 +143,11 @@
         android:layout_alignParentStart="true">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/dept1"
-            android:layout_weight="17.39" />
+            android:layout_weight="17.39"
+            android:inputType="text" />
 
         <EditText
             android:layout_width="143dp"
@@ -165,10 +169,11 @@
         android:weightSum="1">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/dept2"
-            android:layout_weight="0.84" />
+            android:layout_weight="0.84"
+            android:inputType="text" />
 
         <EditText
             android:layout_width="125dp"
@@ -191,10 +196,11 @@
         android:weightSum="1">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/dept3"
-            android:layout_weight="0.94" />
+            android:layout_weight="0.94"
+            android:inputType="text" />
 
         <EditText
             android:layout_width="143dp"
@@ -218,7 +224,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dept4"
-            android:layout_weight="5.76" />
+            android:layout_weight="5.76"
+            android:inputType="text" />
 
         <EditText
             android:layout_width="135dp"
@@ -243,7 +250,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/dept5"
-            android:layout_weight="1.20" />
+            android:layout_weight="1.20"
+            android:inputType="text" />
 
         <EditText
             android:layout_width="134dp"

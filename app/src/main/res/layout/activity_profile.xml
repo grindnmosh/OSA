@@ -16,19 +16,8 @@
         android:layout_marginLeft="46dp"
         android:layout_below="@+id/prospin"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/studName"
-        android:layout_alignTop="@+id/proImgMain"
-        android:layout_toRightOf="@+id/proImgMain"
-        android:layout_toEndOf="@+id/proImgMain"
-        android:layout_marginTop="42dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/proimage" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,8 +26,6 @@
         android:id="@+id/studNum"
         android:layout_toEndOf="@+id/proImgMain"
         android:layout_alignBottom="@+id/proImgMain"
-        android:layout_alignLeft="@+id/studName"
-        android:layout_alignStart="@+id/studName"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -74,7 +61,7 @@
         android:weightSum="1">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/dept1"
@@ -107,7 +94,7 @@
         android:weightSum="1">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/dept2"
@@ -132,7 +119,7 @@
         android:weightSum="1">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/dept3"
@@ -157,7 +144,7 @@
         android:weightSum="1">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/dept4"
@@ -182,7 +169,7 @@
         android:weightSum="1">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/dept5"
@@ -202,5 +189,15 @@
         android:id="@+id/proButt"
         android:layout_alignTop="@+id/linearLayout2"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/studName"
+        android:layout_toEndOf="@+id/proImgMain"
+        android:layout_alignTop="@+id/proImgMain"
+        android:layout_toRightOf="@+id/proImgMain"
+        android:layout_alignRight="@+id/studNum" />
 
 </RelativeLayout>

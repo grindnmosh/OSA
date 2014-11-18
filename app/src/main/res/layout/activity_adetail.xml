@@ -21,21 +21,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
+            android:text="@string/idefault"
             android:id="@+id/assD" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="   for   "
-            android:id="@+id/studName" />
+            android:text=" @string/ifor"
+            android:id="@+id/filler" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
+            android:text="@string/idefault"
             android:id="@+id/classD" />
     </LinearLayout>
 
@@ -52,14 +60,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Due Date:   "
+            android:text="@string/due"
             android:id="@+id/textView2" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
+            android:text="@string/idefault"
             android:id="@+id/dueD" />
     </LinearLayout>
 
@@ -67,7 +75,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Details:  "
+        android:text="@string/details"
         android:id="@+id/studNum"
         android:layout_below="@+id/linearLayout2"
         android:layout_alignParentLeft="true"
@@ -78,7 +86,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="@string/idefault"
         android:id="@+id/detD"
         android:layout_below="@+id/studNum"
         android:layout_alignParentLeft="true"
@@ -90,7 +98,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Link:"
+        android:text="@string/dept4"
         android:id="@+id/textView5"
         android:layout_below="@+id/detD"
         android:layout_alignParentLeft="true"
@@ -101,7 +109,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
+        android:text="@string/idefault"
         android:id="@+id/linkD"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -121,14 +129,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Instructor:   "
+            android:text="@string/instructor"
             android:id="@+id/textView6" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
+            android:text="@string/idefault"
             android:id="@+id/insD" />
     </LinearLayout>
 
@@ -145,14 +153,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="eMail:           "
+            android:text="@string/email"
             android:id="@+id/textView7" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
+            android:text="@string/idefault"
             android:id="@+id/emD" />
     </LinearLayout>
 
@@ -170,14 +178,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Chat Service:   "
+            android:text="@string/service"
             android:id="@+id/textView8" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
+            android:text="@string/idefault"
             android:id="@+id/serD" />
     </LinearLayout>
 
@@ -193,14 +201,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Chat Handle:   "
+            android:text="@string/handle"
             android:id="@+id/textView9" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
+            android:text="@string/idefault"
             android:id="@+id/hanD" />
     </LinearLayout>
 

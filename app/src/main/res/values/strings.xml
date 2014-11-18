@@ -34,5 +34,28 @@
     <string name="title_activity_tadd">New Custom Timer</string>
     <string name="timer">Timer Name:  </string>
     <string name="tbg">timerbg</string>
+    <string name="num3">Details:</string>
+    <string name="dept4">Link:</string>
+    <string name="assignment">Assignment:</string>
+    <string name="iclass">Class:</string>
+    <string name="due">Due Date:</string>
+    <string name="instructor">Instructor:</string>
+    <string name="email">eMail:</string>
+    <string name="service">Chat Service:</string>
+    <string name="handle">Chat Handle:</string>
+    <string name="idefault">Large Text</string>
+    <string name="ifor">for</string>
+    <string name="details">Details:</string>
+    <string name="cdtill">countdown till</string>
+    <string name="newass">Add First Assignment</string>
+    <string name="addpro">Add Profile Image</string>
+    <string name="defimg">defimg</string>
+    <string name="studname">Student Name: </string>
+    <string name="studid">Student ID: </string>
+    <string name="sname">School Name: </string>
+    <string name="dept">Dept:</string>
+    <string name="phone">Phone:</string>
+    <string name="proimage">proimage</string>
+    <string name="mdefault">Medium Text</string>
 
 </resources>

@@ -19,14 +19,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Assignment:    "
+            android:text="@string/assignment"
             android:id="@+id/textView8" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/assIn"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="text" />
 
     </LinearLayout>
 
@@ -44,17 +45,15 @@
             android:layout_width="126dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Class:       "
+            android:text="@string/iclass"
             android:id="@+id/textView9" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/assClass"
-            android:layout_below="@+id/linearLayout"
-            android:layout_alignRight="@+id/linearLayout"
-            android:layout_alignEnd="@+id/linearLayout"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="text" />
 
     </LinearLayout>
 
@@ -71,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Due Date:         "
+            android:text="@string/due"
             android:id="@+id/textView10" />
 
         <EditText
@@ -80,9 +79,6 @@
             android:inputType="date"
             android:ems="10"
             android:id="@+id/assDue"
-            android:layout_alignTop="@+id/linearLayout3"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:layout_marginRight="37dp" />
     </LinearLayout>
 
@@ -90,7 +86,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Details:"
+        android:text="@string/num3"
         android:id="@+id/num3"
         android:layout_below="@+id/linearLayout3"
         android:layout_alignParentLeft="true"
@@ -110,7 +106,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Link:"
+        android:text="@string/dept4"
         android:id="@+id/dept4"
         android:layout_below="@+id/assDetail"
         android:layout_alignParentLeft="true"
@@ -122,7 +118,8 @@
         android:id="@+id/assLink"
         android:layout_below="@+id/dept4"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:inputType="text" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -137,11 +134,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Instructor:    "
+            android:text="@string/instructor"
             android:id="@+id/textView13" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -162,7 +159,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="eMail:           "
+            android:text="@string/email"
             android:id="@+id/textView14" />
 
         <EditText
@@ -187,14 +184,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Chat Service:   "
+            android:text="@string/service"
             android:id="@+id/textView15" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/assServe"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="text" />
     </LinearLayout>
 
     <LinearLayout
@@ -208,14 +206,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Chat Handle:   "
+            android:text="@string/handle"
             android:id="@+id/textView16" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/assHandle"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:inputType="none" />
     </LinearLayout>
 
 </RelativeLayout>

@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Project Name: "
-            android:id="@+id/studName" />
+            android:id="@+id/filler" />
 
         <EditText
             android:layout_width="match_parent"
