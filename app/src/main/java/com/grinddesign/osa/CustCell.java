@@ -2,42 +2,33 @@ package com.grinddesign.osa;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.sql.Time;
-import java.text.Format;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 
 public class CustCell extends ArrayAdapter<String> {
 
     private Context context;
-    private ArrayList<String> arrayLister = GradActivity.namesArray;
+    private ArrayList<String> arrayLister = GradFragment.namesArray;
 
     public CustCell(Context context, int resource, ArrayList<String> arrayLister) {
         super(context, resource, arrayLister);
-        Log.i("cust", "adapter1");
         this.context = context;
         this.arrayLister = arrayLister;
     }
-
-
 
     public View getView(final int position, View convertView, ViewGroup parent) {
         Log.i("cust", "adapter");
 
         String names = arrayLister.get(position);
-        long millis = GradActivity.millisArray.get(position);
+        long millis = GradFragment.millisArray.get(position);
         long time = System.currentTimeMillis();
         long count = millis - time;
 

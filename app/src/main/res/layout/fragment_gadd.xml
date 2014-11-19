@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.grinddesign.osa.GAddFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.grinddesign.osa.GAddFragment"
+        android:id="@+id/gfragment"
+        android:layout_gravity="left|top" />
+</FrameLayout>
