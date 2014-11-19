@@ -69,5 +69,6 @@ public class CustCell extends ArrayAdapter<String> {
         }.start();
 
         return view;
+
     }
 }

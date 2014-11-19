@@ -36,9 +36,9 @@ public class GradActivity extends Activity implements AdapterView.OnItemClickLis
     long millis;
 
     public static ArrayAdapter<String> loadsAdapter;
-    public static ArrayAdapter<String> custAdapter;
-    public static ArrayList<String> namesArray = new ArrayList<String>();
-    public static ArrayList<Long> millisArray = new ArrayList<Long>();
+    public static ArrayAdapter<String> custAdapter = null;
+    public static ArrayList<String> namesArray;
+    public static ArrayList<Long> millisArray;
 
 
     @Override
@@ -51,6 +51,9 @@ public class GradActivity extends Activity implements AdapterView.OnItemClickLis
         img = (ImageView) findViewById(R.id.gtimerbg);
         tv = (TextView) findViewById(R.id.gtimer);
         timedButt = (Button) findViewById(R.id.custbutt);
+
+        namesArray = new ArrayList<String>();
+        millisArray = new ArrayList<Long>();
 
         img.setVisibility(View.INVISIBLE);
         tv.setVisibility(View.INVISIBLE);
@@ -120,7 +123,6 @@ public class GradActivity extends Activity implements AdapterView.OnItemClickLis
         custAdapter = new CustCell(this, R.layout.activity_time_cell, namesArray);
         lv.setOnItemClickListener(this);
         lv.setOnItemLongClickListener(this);
-
         lv.setAdapter(custAdapter);
     }
 

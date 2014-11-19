@@ -70,7 +70,6 @@ public class PDetailFragment extends Fragment {
 
         pdAdapter = new TimeCell(context, R.layout.activity_time_cell, daysArray);
 
-        //load adapter into listview
         pd.setAdapter(pdAdapter);
 
         return view;
