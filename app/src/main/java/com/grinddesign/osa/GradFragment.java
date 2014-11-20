@@ -33,6 +33,8 @@ public class GradFragment extends Fragment implements AdapterView.OnItemClickLis
     ArrayList<CustObject> cData;
 
     Button timedButt;
+    Button gradButt;
+    Button cButt;
     ImageView img;
     TextView tv;
 
@@ -65,7 +67,12 @@ public class GradFragment extends Fragment implements AdapterView.OnItemClickLis
         img = (ImageView) view.findViewById(R.id.gtimerbg);
         tv = (TextView) view.findViewById(R.id.gtimer);
         timedButt = (Button) view.findViewById(R.id.custbutt);
+        gradButt = (Button) view.findViewById(R.id.gradButt);
+        cButt = (Button) view.findViewById(R.id.cButt);
+
         timedButt.setOnClickListener(myhandler);
+        gradButt.setOnClickListener(handle1);
+        cButt.setOnClickListener(handle2);
 
         namesArray = new ArrayList<String>();
         millisArray = new ArrayList<Long>();
@@ -92,6 +99,8 @@ public class GradFragment extends Fragment implements AdapterView.OnItemClickLis
         if (gData != null) {
             img.setVisibility(View.VISIBLE);
             tv.setVisibility(View.VISIBLE);
+            gradButt.setVisibility(View.INVISIBLE);
+
 
             GradObject gradData = gData.get(0);
             long gMillis = gradData.getGmillis();
@@ -109,6 +118,12 @@ public class GradFragment extends Fragment implements AdapterView.OnItemClickLis
                     tv.setText("done!");
                 }
             }.start();
+        }
+        else
+        {
+            img.setVisibility(View.INVISIBLE);
+            tv.setVisibility(View.INVISIBLE);
+            gradButt.setVisibility(View.VISIBLE);
         }
 
         try {
@@ -130,10 +145,11 @@ public class GradFragment extends Fragment implements AdapterView.OnItemClickLis
             e.printStackTrace();
         }
 
+
+
         if (cData != null) {
-
-
-
+            timedButt.setVisibility(View.VISIBLE);
+            cButt.setVisibility(View.INVISIBLE);
             for (i = 0; i < cData.size(); i++) {
                 CustObject data = cData.get(i);
                 name = data.getTname();
@@ -142,6 +158,11 @@ public class GradFragment extends Fragment implements AdapterView.OnItemClickLis
                 namesArray.add(name);
                 millisArray.add(millis);
             }
+        }
+        else
+        {
+            timedButt.setVisibility(View.INVISIBLE);
+            cButt.setVisibility(View.VISIBLE);
         }
 
         loads = getResources().getStringArray(R.array.loads);
@@ -179,6 +200,20 @@ public class GradFragment extends Fragment implements AdapterView.OnItemClickLis
     }
 
     View.OnClickListener myhandler = new View.OnClickListener() {
+        public void onClick(View v) {
+            Intent newTime = new Intent(getActivity(), TAddActivity.class);
+            startActivity(newTime);
+        }
+    };
+
+    View.OnClickListener handle1 = new View.OnClickListener() {
+        public void onClick(View v) {
+            Intent gTime = new Intent(getActivity(), GAddActivity.class);
+            startActivity(gTime);
+        }
+    };
+
+    View.OnClickListener handle2 = new View.OnClickListener() {
         public void onClick(View v) {
             Intent newTime = new Intent(getActivity(), TAddActivity.class);
             startActivity(newTime);

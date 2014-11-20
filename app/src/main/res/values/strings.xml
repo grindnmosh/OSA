@@ -59,5 +59,7 @@
     <string name="mdefault">Medium Text</string>
     <string name="title_activity_cust_cell">CustCell</string>
     <string name="title_activity_gadd">Set Graduation Date</string>
+    <string name="gbutt">Set Graduation Date</string>
+    <string name="custbutt">Create Custom Timer</string>
 
 </resources>

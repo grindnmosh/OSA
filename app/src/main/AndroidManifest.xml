@@ -92,6 +92,7 @@
         <activity
             android:name=".TAddActivity"
             android:label="@string/title_activity_tadd"
+            android:windowSoftInputMode="adjustPan"
             android:parentActivityName=".GradActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
