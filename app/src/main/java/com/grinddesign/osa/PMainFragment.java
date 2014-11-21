@@ -198,7 +198,7 @@ public class PMainFragment extends Fragment implements AdapterView.OnItemClickLi
 
         try {
             Log.i("jObj2", "am I here");
-            FileOutputStream fos = getActivity().openFileOutput("ass.dat", Context.MODE_PRIVATE);
+            FileOutputStream fos = getActivity().openFileOutput("proj.dat", Context.MODE_PRIVATE);
 
             // Wrapping our file stream.
             Log.i("jObj2", "am I here2");
