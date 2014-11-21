@@ -174,13 +174,13 @@ public class GradFragment extends Fragment implements AdapterView.OnItemClickLis
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (loads[i].equals("Assignments")) {
-                    Intent main = new Intent(context, MainActivity.class);
+                    Intent main = new Intent(getActivity(), MainActivity.class);
                     GradFragment.this.startActivity(main);
                 } else if (loads[i].equals("Time Management")) {
-                    Intent time = new Intent(context, PMainActivity.class);
+                    Intent time = new Intent(getActivity(), PMainActivity.class);
                     GradFragment.this.startActivity(time);
                 } else if (loads[i].equals("Profile")) {
-                    Intent pro = new Intent(context, ProfileActivity.class);
+                    Intent pro = new Intent(getActivity(), ProfileActivity.class);
                     GradFragment.this.startActivity(pro);
                 }
 
